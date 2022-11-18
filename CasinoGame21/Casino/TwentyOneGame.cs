@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Casino.interfaces;
 
 namespace Casino.TwentyoneExample2
 {
@@ -20,7 +21,8 @@ namespace Casino.TwentyoneExample2
             Dealer.Hand = new List<Card>();
             Dealer.Stay = false;
             Dealer.Deck = new Deck();
-            
+
+            Dealer.Deck.Shuffle();
 
             foreach (Player player in Players)
             {
@@ -74,6 +76,7 @@ namespace Casino.TwentyoneExample2
                         {
                             Dealer.Balance += entry.Value;
                         }
+                        return;
                     }
                 }
             }
@@ -127,6 +130,10 @@ namespace Casino.TwentyoneExample2
                 Console.WriteLine("Dealer is hitting...");
                 Dealer.Deal(Dealer.Hand);
                 Dealer.isBusted = TwentyOneRules.IsBusted(Dealer.Hand);
+
+
+
+
                 Dealer.Stay = TwentyOneRules.ShouldDealerStay(Dealer.Hand);
             }
             if (Dealer.Stay)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Casino
+namespace Casino.interfaces
 {
     interface IWalkAway // cam only inherit one base class but can also inherit as many interfaces as you want
     {

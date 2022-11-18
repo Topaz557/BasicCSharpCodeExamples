@@ -16,8 +16,8 @@ namespace Casino
                 for (int j = 0; j < 4; j++)
                 {
                     Card card = new Card();
-                    card.Face = (Face)j;
-                    card.Suit = (Suit)i;
+                    card.Face = (Face)i;
+                    card.Suit = (Suit)j;
                     Cards.Add(card);
                 }
             }
